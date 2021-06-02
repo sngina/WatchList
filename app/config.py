@@ -1,21 +1,26 @@
-from re import DEBUG
-
-
-class Config:  # contains configuration that are used in both production and development stages....
+class Config:
     '''
     General configuration parent class
     '''
-class  ProdConfig(Config): # contains configuration that are used in production stages 
+    MOVIE_API_BASE_URL = 'https://api.themoviedb.org/3/movie/{}?api_key={}'
+
+
+class ProdConfig(Config):
     '''
-    Production configuration child class
+    Production  configuration child class
 
     Args:
-         Config: The parent configuration class with General configuration settings
-         '''
-class   DevConfig(Config): #contains configuation that are used in development stages
+        Config: The parent configuration class with General configuration settings
     '''
-    Development configuration child case
+    pass
+
+
+class DevConfig(Config):
+    '''
+    Development  configuration child class
+
     Args:
-        Config: The parents configuration class with General configuration settings
-        '''
-    DEBUG = True # enables debug mode in our application..
+        Config: The parent configuration class with General configuration settings
+    '''
+
+    DEBUG = True
